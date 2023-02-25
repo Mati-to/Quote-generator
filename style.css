@@ -1,0 +1,17 @@
+/* General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0), #00000062), url(./img/bg-image.avif) no-repeat center center/ cover;
+}
