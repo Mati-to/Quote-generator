@@ -1,5 +1,4 @@
 /* General Styles */
-
 * {
     margin: 0;
     padding: 0;
@@ -15,3 +14,39 @@ body {
     text-align: center;
     background: radial-gradient(circle, rgba(0, 0, 0, 0), #00000062), url(./img/bg-image.avif) no-repeat center center/ cover;
 }
+
+/* Container */
+.container {
+    width: 600px;
+    height: 450px;
+}
+
+/* Card */
+.header {
+    font-size: 1rem;
+}
+
+.blockquote-footer {
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.person {
+    color: #bd2e2b;
+}
+
+.card {
+    background-color: #e5e5e2;
+}
+
+.card-header {
+    background-color: #f4f4f3;
+}
+
+.button {
+    background-color: #252525;
+    color: #f4f4f3;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
