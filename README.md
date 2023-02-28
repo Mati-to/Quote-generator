@@ -1,6 +1,4 @@
 # Annoying-web-app
 First project that I'm doing alone to include in my portfolio.
-The idea is making a simple web app but in this case, it will be an app where the user can't complete his tasks. 
-With HTML, CSS and Javascript I'm going to use the DOM to manipulate different events and make it hard to 
-use the app.
-I'm also using Git and GitHub to keep improving my skills.
+This is my first project. It's a simple quote generator, where I apply a bit of my own code to the stylesheet and also I apply some Bootstrap styles. There's Javascript code and DOM manipulation as well.
+I'm using Git and GitHub to keep improving my skills, therefore this project will be public in my Github repo.
