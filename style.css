@@ -26,13 +26,10 @@ body {
     font-size: 1rem;
 }
 
-.blockquote-footer {
-    padding: 1rem;
-    font-size: 1rem;
-}
-
-.person {
+.author {
     color: #bd2e2b;
+    font-family: 'Libre Baskerville', serif;
+    letter-spacing: 2px;
 }
 
 .card {
@@ -41,6 +38,11 @@ body {
 
 .card-header {
     background-color: #f4f4f3;
+}
+
+.blockquote-footer {
+    padding: 1rem;
+    font-size: 1rem;
 }
 
 .button {
