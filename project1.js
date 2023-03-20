@@ -1,11 +1,16 @@
+
 //* Variables
-let btn = document.querySelector('.button');
-let quote = document.querySelector('.quote');
-let author = document.querySelector('.author');
+const btn = document.querySelector('.button');
+const quote = document.querySelector('.quote');
+const author = document.querySelector('.author');
+const body = document.querySelector('body');
+const img = document.querySelector('img');
+const mainC = document.querySelector('main');
 const quotes = [
     {
         "quote": "Be yourself; everyone else is already taken.",
         "author": "Oscar Wilde",
+        "img": "OW",
         "profession": "Irish poet",
         "topics": [
             "Inspirational",
@@ -14,8 +19,20 @@ const quotes = [
         ]
     },
     {
+        "quote": "Looking back, we were the luckiest people in the world. There was no choice but to be pioneers; no time to be beginners.",
+        "author": "Margaret Hamilton",
+        "img": "MH",
+        "profession": "CS",
+        "topics": [
+            "Inspirational",
+            "Advice",
+            "Philosophy"
+        ]
+    },
+    {
         "quote": "To live is the rarest thing in the world. Most people exist, that is all.",
         "author": "Oscar Wilde",
+        "img": "OW",
         "profession": "Irish poet",
         "topics": [
             "Philosophy",
@@ -23,8 +40,19 @@ const quotes = [
         ]
     },
     {
+        "quote": "Sometimes it is the people no one can imagine anything of who do the things no one can imagine.",
+        "author": "Alan Turing",
+        "img": "AT",
+        "profession": "Mathematician",
+        "topics": [
+            "Philosophy",
+            "Inspiration"
+        ]
+    },
+    {
         "quote": "True friends stab you in the front.",
         "author": "Oscar Wilde",
+        "img": "OW",
         "profession": "Irish poet",
         "topics": [
             "Philosophy",
@@ -32,37 +60,9 @@ const quotes = [
         ]
     },
     {
-        "quote": "Women are made to be Loved, not understood.",
-        "author": "Oscar Wilde",
-        "profession": "Irish poet",
-        "topics": [
-            "Philosophy",
-            "Humor"
-        ]
-    },
-    {
-        "quote": "Be the change that you wish to see in the world.",
-        "author": "Mahatma Gandhi",
-        "profession": "Indian leader",
-        "topics": [
-            "Inspirational",
-            "Philosophy",
-            "Advice"
-        ]
-    },
-    {
-        "quote": "Live as if you were to die tomorrow. Learn as if you were to live forever.",
-        "author": "Mahatma Gandhi",
-        "profession": "Indian leader",
-        "topics": [
-            "Inspirational",
-            "Life",
-            "Advice"
-        ]
-    },
-    {
         "quote": "Injustice anywhere is a threat to justice everywhere.",
         "author": "Martin Luther King",
+        "img": "MLK",
         "profession": "American minister",
         "topics": [
             "Wisdom"
@@ -71,6 +71,7 @@ const quotes = [
     {
         "quote": "The time is always right to do what is right.",
         "author": "Martin Luther King",
+        "img": "MLK",
         "profession": "American minister",
         "topics": [
             "Inspirational",
@@ -80,6 +81,7 @@ const quotes = [
     {
         "quote": "Life's most persistent and urgent question is, 'What are you doing for others?",
         "author": "Martin Luther King",
+        "img": "MLK",
         "profession": "American minister",
         "topics": [
             "Inspirational",
@@ -90,6 +92,7 @@ const quotes = [
     {
         "quote": "Weak people revenge. Strong people forgive. Intelligent People Ignore.",
         "author": "Albert Einstein",
+        "img": "AE",
         "profession": "Theoretical physicist",
         "topics": [
             "Inspirational",
@@ -97,34 +100,9 @@ const quotes = [
         ]
     },
     {
-        "quote": "I have not failed. I've just found 10,000 ways that won't work.",
-        "author": "Thomas A. Edison",
-        "profession": "American inventor",
-        "topics": [
-            "Inspirational"
-        ]
-    },
-    {
-        "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
-        "author": "Thomas A. Edison",
-        "profession": "American inventor",
-        "topics": [
-            "Inspirational",
-            "Wisdom"
-        ]
-    },
-    {
-        "quote": "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
-        "author": "Thomas A. Edison",
-        "profession": "American inventor",
-        "topics": [
-            "Inspirational",
-            "Advice"
-        ]
-    },
-    {
-        "quote": "If we did all the things we are capable of, we would literally astound ourselves.",
-        "author": "Thomas A. Edison",
+        "quote": "The most important product of a creative mind is an invention. Its ultimate aim is the rule of mind over nature and the use of its forces for the needs of mankind.",
+        "author": "Nikola Tesla",
+        "img": "NT",
         "profession": "American inventor",
         "topics": [
             "Inspirational"
@@ -133,6 +111,7 @@ const quotes = [
     {
         "quote": "Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.",
         "author": "Albert Einstein",
+        "img": "AE",
         "profession": "Theoretical physicist",
         "topics": [
             "Inspirational",
@@ -140,18 +119,9 @@ const quotes = [
         ]
     },
     {
-        "quote": "Life isn't about finding yourself. Life is about creating yourself.",
-        "author": "George Bernard Shaw",
-        "profession": "Irish playwright",
-        "topics": [
-            "Inspirational",
-            "Life",
-            "Advice"
-        ]
-    },
-    {
         "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
         "author": "Winston Churchill",
+        "img": "WCH",
         "profession": "Former British Prime Minister",
         "topics": [
             "Inspirational",
@@ -162,6 +132,7 @@ const quotes = [
     {
         "quote": "If you're going through hell, keep going.",
         "author": "Winston Churchill",
+        "img": "WCH",
         "profession": "Former British Prime Minister",
         "topics": [
             "Inspirational",
@@ -171,128 +142,42 @@ const quotes = [
     {
         "quote": "We make a living by what we get, but we make a life by what we give.",
         "author": "Winston Churchill",
+        "img": "WCH",
         "profession": "Former British Prime Minister",
         "topics": [
             "People",
             "Life"
         ]
-    },
-    {
-        "quote": "Peace begins with a smile.",
-        "author": "Mother Teresa",
-        "profession": "Roman Catholic Saint",
-        "topics": [
-            "Inspirational",
-            "Wisdom"
-        ]
-    },
-    {
-        "quote": "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
-        "author": "Mother Teresa",
-        "profession": "Roman Catholic Saint",
-        "topics": [
-            "Inspirational",
-            "Love",
-            "Advice"
-        ]
-    },
-    {
-        "quote": "If you can't feed a hundred people, then feed just one.",
-        "author": "Mother Teresa",
-        "profession": "Roman Catholic Saint",
-        "topics": [
-            "Inspirational",
-            "Advice",
-            "People"
-        ]
-    },
-    {
-        "quote": "Kind words can be short and easy to speak, but their echoes are truly endless.",
-        "author": "Mother Teresa",
-        "profession": "Roman Catholic Saint",
-        "topics": [
-            "Inspirational",
-            "People"
-        ]
-    },
-    {
-        "quote": "Isn't it nice to think that tomorrow is a new day with no mistakes in it yet?",
-        "author": "L.M. Montgomery",
-        "profession": "Canadian author",
-        "topics": [
-            "Inspirational"
-        ]
-    },
-    {
-        "quote": "Tomorrow is always fresh, with no mistakes in it.",
-        "author": "L.M. Montgomery",
-        "profession": "Canadian author",
-        "topics": [
-            "Inspirational"
-        ]
-    },
-    {
-        "quote": "We should regret our mistakes and learn from them, but never carry them forward into the future with us.",
-        "author": "L.M. Montgomery",
-        "profession": "Canadian author",
-        "topics": [
-            "Inspirational",
-            "Advice",
-            "Life"
-        ]
-    },
-    {
-        "quote": "It's so easy to be wicked without knowing it, isn't it?",
-        "author": "L.M. Montgomery",
-        "profession": "Canadian author",
-        "topics": [
-            "Inspirational",
-            "Philosophy",
-            "Life"
-        ]
-    },
-    {
-        "quote": "All the darkness in the world cannot extinguish the light of a single candle.",
-        "author": "Francis of Assisi",
-        "profession": "Italian Catholic Saint",
-        "topics": [
-            "Inspirational",
-            "Wisdom"
-        ]
-    },
-    {
-        "quote": "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
-        "author": "Francis of Assisi",
-        "profession": "Italian Catholic Saint",
-        "topics": [
-            "Inspirational",
-            "Wisdom"
-        ]
-    },
-    {
-        "quote": "Preach the Gospel at all times and when necessary use words.",
-        "author": "Francis of Assisi",
-        "profession": "Italian Catholic Saint",
-        "topics": [
-            "Religion",
-            "Wisdom"
-        ]
-    },
-    {
-        "quote": "A single sunbeam is enough to drive away many shadows.",
-        "author": "Francis of Assisi",
-        "profession": "Italian Catholic Saint",
-        "topics": [
-            "Inspirational",
-            "Wisdom"
-        ]
-    },
+    }
 ];
 
 //* Event handlers
-btn.addEventListener('click', function(e) {
-    e.preventDefault();
+btn.addEventListener('click', function () {
     let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    quote.innerHTML = `"${randomQuote.quote}"`;
-    author.innerHTML = randomQuote.author;
+    quote.textContent = `"${randomQuote.quote}"`;
+    author.textContent = randomQuote.author;
+    img.src = `./img/authors/${randomQuote.img}.png`
+    animateCSS('img', 'fadeInLeft');
+    body.classList.add('bg-change');
+    mainC.classList.add('animate__animated', 'animate__fadeInDown');
 })
+
+
+// Animation function that it triggers everytime a new quote is requested
+const animateCSS = (element, animation, prefix = 'animate__') =>
+    // Create a Promise and return it
+    new Promise((resolve, reject) => {
+        const animationName = `${prefix}${animation}`;
+        const node = document.querySelector(element);
+
+        node.classList.add(`${prefix}animated`, animationName);
+
+        // When the animation ends, this will clean the classes and resolve the Promise
+        function handleAnimationEnd(event) {
+            event.stopPropagation();
+            node.classList.remove(`${prefix}animated`, animationName);
+            resolve('Animation ended');
+        }
+
+        node.addEventListener('animationend', handleAnimationEnd, { once: true });
+    });

@@ -1,0 +1,23 @@
+{
+  "name": "quote-generator-app",
+  "version": "1.0.0",
+  "description": "First project that I'm doing alone to include in my portfolio.\r This is my first project. It's a simple quote generator, where I apply a bit of my own code to the stylesheet and also I apply some Bootstrap styles. There's Javascript code and DOM manipulation as well.\r I'm using Git and GitHub to keep improving my skills, therefore this project will be public in my Github repo.",
+  "main": "project1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PostTenebra/Annoying-web-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PostTenebra/Annoying-web-app/issues"
+  },
+  "homepage": "https://github.com/PostTenebra/Annoying-web-app#readme",
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  }
+}
